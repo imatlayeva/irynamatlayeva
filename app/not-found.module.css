@@ -1,0 +1,73 @@
+.wrap {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    padding: var(--sp-xl) var(--sp-lg);
+}
+
+.inner {
+    max-width: 28rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-md);
+}
+
+.code {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 6rem;
+    color: var(--sand);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.heading {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: var(--text-3xl);
+    color: var(--forest);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.heading em {
+    font-style: italic;
+    color: var(--olive);
+}
+
+.body {
+    font-size: var(--text-base);
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: var(--sp-md);
+    padding: 0.875rem 2.25rem;
+    background: var(--forest);
+    color: var(--cream);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--olive);
+}
+
+.hint {
+    font-size: var(--text-sm);
+    color: var(--muted);
+}
+
+.hintLink {
+    color: var(--terra);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

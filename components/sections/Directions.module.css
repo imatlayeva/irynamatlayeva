@@ -1,0 +1,104 @@
+.section {
+    padding: var(--sp-3xl) 0;
+    background: var(--forest);
+    color: var(--cream);
+}
+
+.inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--sp-lg);
+}
+
+.heading {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: var(--text-sm);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: var(--sp-2xl);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 0.95fr;
+    gap: var(--sp-xl);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+    padding: var(--sp-lg) var(--sp-md) var(--sp-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
+    transition: border-color 0.4s ease, transform 0.4s ease, background 0.4s ease;
+}
+
+.card:hover {
+    border-top-color: var(--terra);
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-4px);
+}
+
+.card:nth-child(2) {
+    margin-top: var(--sp-xl);
+}
+
+.card:nth-child(3) {
+    margin-top: var(--sp-md);
+}
+
+.num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-3xl);
+    color: var(--olive);
+    opacity: 0.4;
+    line-height: 1;
+    font-weight: 300;
+    transition: opacity 0.4s ease, color 0.4s ease;
+}
+
+.card:hover .num {
+    opacity: 0.8;
+    color: var(--terra);
+}
+
+.title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: var(--text-xl);
+    color: var(--cream);
+    line-height: 1.25;
+}
+
+.body {
+    font-size: var(--text-sm);
+    line-height: 1.75;
+    color: rgba(231, 225, 215, 0.65);
+    font-weight: 300;
+}
+
+.note {
+    margin-top: var(--sp-2xl);
+    padding-top: var(--sp-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-base);
+    color: var(--olive);
+    font-weight: 300;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--sp-lg);
+    }
+    .card:nth-child(2),
+    .card:nth-child(3) {
+        margin-top: 0;
+    }
+}

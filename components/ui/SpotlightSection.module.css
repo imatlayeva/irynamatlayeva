@@ -1,0 +1,20 @@
+.wrap {
+    position: relative;
+    isolation: isolate;
+}
+
+.glow {
+    position: absolute;
+    inset: -6rem -4rem;
+    pointer-events: none;
+    z-index: 0;
+    transform-origin: center center;
+    will-change: opacity, transform;
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}

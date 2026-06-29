@@ -1,0 +1,13 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  height: 6rem;
+  position: relative;
+}
+.line {
+  width: 1px;
+  background: linear-gradient(to bottom, var(--olive), var(--terra) 50%, var(--olive));
+}
+@media (max-width: 768px) {
+  .wrap { height: 4rem; }
+}

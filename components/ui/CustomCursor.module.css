@@ -1,0 +1,21 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: var(--terra);
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-sm);
+  font-weight: 300;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+@media (pointer: coarse) {
+  .cursor { display: none; }
+}

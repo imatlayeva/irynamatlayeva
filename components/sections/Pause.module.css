@@ -1,0 +1,17 @@
+.section {
+    background: var(--forest);
+    padding: var(--sp-2xl) var(--sp-lg);
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.25rem, 2.6vw, var(--text-2xl));
+    color: var(--cream);
+    text-align: center;
+    max-width: 30ch;
+    line-height: 1.4;
+}

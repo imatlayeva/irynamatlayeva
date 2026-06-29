@@ -1,0 +1,155 @@
+.section {
+    padding: var(--sp-3xl) 0;
+    background: var(--cream);
+}
+
+.inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--sp-lg);
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--sp-2xl) var(--sp-2xl);
+    align-items: start;
+}
+
+.scroll {
+    position: sticky;
+    top: calc(4rem + var(--sp-xl));
+}
+
+
+/* Left column: photo + credentials underneath */
+
+.photoCol {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-lg);
+}
+
+.photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--sand);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+    .scroll {
+        position: static;
+        gap: var(--sp-md);
+    }
+    .photo {
+        height: 100%;
+    }
+}
+
+
+/* Credentials now live below the photo in the left column */
+
+.credentials {
+    padding: var(--sp-md);
+    background: var(--sand);
+    border-radius: 2px;
+}
+
+.credentialItem {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-sm);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(130, 139, 110, 0.15);
+}
+
+.credentialItem:last-child {
+    border-bottom: none;
+}
+
+.credentialDot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--olive);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+}
+
+.credentialText {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+
+/* Right column: text only */
+
+.textCol {}
+
+.sectionLabel {
+    font-size: var(--text-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: var(--sp-lg);
+}
+
+.body p {
+    font-size: var(--text-base);
+    line-height: 1.85;
+    color: var(--text);
+    max-width: 32rem;
+}
+
+.body p+p {
+    margin-top: var(--sp-md);
+}
+
+.highlight {
+    margin: var(--sp-xl) 0;
+    padding-left: var(--sp-md);
+    border-left: 2px solid var(--olive);
+}
+
+.highlight p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-xl);
+    color: var(--forest);
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+@media (max-width: 900px) {
+    .inner {
+        grid-template-columns: 1fr;
+        gap: var(--sp-xl);
+    }
+    .photoCol {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--sp-md);
+        align-items: start;
+    }
+    .photo {
+        aspect-ratio: 3/4;
+    }
+    .credentials {
+        padding: var(--sp-sm);
+    }
+}
+
+@media (max-width: 600px) {
+    .photoCol {
+        grid-template-columns: 1fr;
+    }
+    .photo {
+        aspect-ratio: 4/3;
+        max-height: 320px;
+    }
+}

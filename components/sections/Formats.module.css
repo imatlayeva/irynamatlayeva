@@ -1,0 +1,244 @@
+.section {
+    padding: var(--sp-3xl) 0;
+    background: var(--sand);
+}
+
+.inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--sp-lg);
+}
+
+.sectionLabel {
+    font-size: var(--text-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: var(--sp-2xl);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xl);
+}
+
+
+/* Each format is a horizontal card: number/label rail on the left,
+   content on the right — consistent across all three regardless of
+   text length. */
+
+.card {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: var(--sp-xl);
+    background: var(--cream);
+    border-radius: 2px;
+    padding: var(--sp-xl);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -24px rgba(58, 63, 46, 0.22);
+}
+
+.card--dark {
+    background: var(--forest);
+    color: var(--cream);
+}
+
+.card--dark:hover {
+    box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.4);
+}
+
+.rail {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-sm);
+}
+
+.cardLabel {
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--olive);
+}
+
+.cardTitle {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: var(--text-xl);
+    color: var(--forest);
+    line-height: 1.2;
+}
+
+.card--dark .cardTitle {
+    color: var(--cream);
+}
+
+.meta {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-top: auto;
+}
+
+.card--dark .meta {
+    color: rgba(231, 225, 215, 0.55);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardBody {
+    font-size: var(--text-sm);
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.cardBody+.cardBody {
+    margin-top: var(--sp-md);
+}
+
+.card--dark .cardBody {
+    color: rgba(231, 225, 215, 0.72);
+}
+
+.changesList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem var(--sp-lg);
+    margin: var(--sp-lg) 0;
+}
+
+.changesList li {
+    font-size: var(--text-sm);
+    color: var(--text);
+    padding-left: var(--sp-md);
+    position: relative;
+    line-height: 1.6;
+}
+
+.changesList li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--olive);
+}
+
+.formats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-sm) var(--sp-lg);
+    margin: var(--sp-lg) 0;
+}
+
+.formatItem {
+    display: flex;
+    gap: var(--sp-sm);
+    align-items: flex-start;
+    font-size: var(--text-sm);
+    color: rgba(231, 225, 215, 0.72);
+    line-height: 1.5;
+}
+
+.formatItem::before {
+    content: "—";
+    color: var(--olive);
+    flex-shrink: 0;
+}
+
+.confidential {
+    font-size: var(--text-xs);
+    color: rgba(231, 225, 215, 0.55);
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--sp-md);
+    margin-top: var(--sp-md);
+}
+
+.actions {
+    margin-top: var(--sp-lg);
+}
+
+.groupFormats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+    margin-top: var(--sp-lg);
+    padding-top: var(--sp-lg);
+    border-top: 1px solid var(--sand);
+}
+
+.groupFormat {
+    display: flex;
+    gap: var(--sp-md);
+    align-items: flex-start;
+}
+
+.groupFormatIcon {
+    color: var(--terra);
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    opacity: 0.7;
+}
+
+.groupFormatTitle {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 0.25rem;
+    font-family: var(--font-body);
+}
+
+.groupFormatBody {
+    font-size: var(--text-xs);
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+
+/* Dark card button — visible outline on dark background */
+
+.btnDark {
+    display: inline-block;
+    padding: 0.875rem 2.25rem;
+    border: 1px solid rgba(231, 225, 215, 0.35);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.btnDark:hover {
+    background: rgba(231, 225, 215, 0.12);
+    border-color: rgba(231, 225, 215, 0.7);
+}
+
+@media (max-width: 900px) {
+    .card {
+        grid-template-columns: 1fr;
+        gap: var(--sp-md);
+    }
+    .rail {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--sp-xs);
+        padding-bottom: var(--sp-md);
+        border-bottom: 1px solid var(--sand);
+    }
+    .meta {
+        margin-top: 0;
+    }
+    .changesList,
+    .formats {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,213 @@
+.section {
+    padding: var(--sp-3xl) 0;
+    background: var(--cream);
+}
+
+.inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--sp-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2xl);
+}
+
+
+/* ── HEADER ──────────────────────────────────────────────── */
+
+.header {
+    max-width: 42rem;
+}
+
+.intro {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-2xl);
+    color: var(--olive);
+    margin-bottom: var(--sp-lg);
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.lead {
+    font-size: var(--text-lg);
+    line-height: 1.75;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: var(--sp-md);
+}
+
+
+/* ── SYMPTOM GRID ────────────────────────────────────────── */
+
+
+/* 4 columns on desktop, 2 on tablet, horizontal scroll on mobile */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-md);
+}
+
+.card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 4px;
+    padding: var(--sp-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-sm);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.card:hover {
+    border-color: var(--olive);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -16px rgba(58, 63, 46, 0.18);
+}
+
+.cardNum {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-2xl);
+    color: var(--sand);
+    font-weight: 300;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.card:hover .cardNum {
+    color: var(--terra);
+}
+
+.cardText {
+    font-size: var(--text-sm);
+    line-height: 1.65;
+    color: var(--text);
+    font-weight: 300;
+}
+
+
+/* ── THRESHOLD PASSAGE ───────────────────────────────────── */
+
+.threshold {
+    background: var(--forest);
+    border-radius: 4px;
+    padding: var(--sp-xl) var(--sp-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+}
+
+.thresholdLabel {
+    font-size: var(--text-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--olive);
+}
+
+.thresholdItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-sm) var(--sp-xl);
+}
+
+.thresholdItems span {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-xl);
+    color: var(--cream);
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.thresholdNote {
+    font-size: var(--text-base);
+    color: rgba(231, 225, 215, 0.6);
+    font-weight: 300;
+    max-width: 28rem;
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--sp-md);
+    margin-top: var(--sp-xs);
+}
+
+
+/* ── CLOSING ─────────────────────────────────────────────── */
+
+.closing {
+    max-width: 38rem;
+}
+
+.closing p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-xl);
+    color: var(--muted);
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.closingAccent {
+    color: var(--forest) !important;
+    margin-top: var(--sp-sm) !important;
+    opacity: 1 !important;
+}
+
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .thresholdItems span {
+        font-size: var(--text-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .intro {
+        font-size: var(--text-xl);
+    }
+    .lead {
+        font-size: var(--text-base);
+    }
+    .threshold {
+        padding: var(--sp-lg);
+    }
+    .thresholdItems {
+        flex-direction: column;
+        gap: var(--sp-xs);
+    }
+    .thresholdItems span {
+        font-size: var(--text-lg);
+    }
+    .closing p {
+        font-size: var(--text-lg);
+    }
+}
+
+@media (max-width: 600px) {
+    /* On small phones — horizontal scroll for cards */
+    .grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: var(--sp-sm);
+        padding-bottom: var(--sp-sm);
+        margin: 0 calc(var(--sp-lg) * -1);
+        padding-left: var(--sp-lg);
+        padding-right: var(--sp-lg);
+        scrollbar-width: none;
+    }
+    .grid::-webkit-scrollbar {
+        display: none;
+    }
+    .card {
+        flex: 0 0 75vw;
+        scroll-snap-align: start;
+        min-height: 10rem;
+    }
+}
