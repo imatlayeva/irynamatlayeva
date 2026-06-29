@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-const siteUrl = "https://iryna-matlaieva.vercel.app"; // TODO: замінити на реальний домен після підключення
+const siteUrl = "https://irynamatlayeva.com"; 
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
