@@ -397,40 +397,69 @@
 }
 
 @media (max-width: 600px) {
+    .section {
+        overflow-x: hidden;
+    }
     .inner {
         padding: 0 var(--sp-sm);
+        max-width: 100%;
+    }
+    .list,
+    .card,
+    .content,
+    .contentInner {
+        max-width: 100%;
+    }
+    .list {
+        gap: var(--sp-sm);
     }
     .railBtn {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        width: 100%;
+        max-width: 100%;
         min-height: 4.5rem;
-        align-items: flex-start;
+        align-items: center;
         padding: var(--sp-md);
         gap: var(--sp-sm);
     }
+    .railLeft {
+        min-width: 0;
+        max-width: 100%;
+    }
     .railRight {
-        gap: var(--sp-sm);
-        margin-top: 0.1rem;
+        min-width: auto;
+        flex-shrink: 0;
+        gap: 0;
+        margin-top: 0;
     }
     .metaInline {
         display: none;
     }
     .cardTitle {
         font-size: var(--text-lg);
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: normal;
     }
     .chevron {
-        width: 1.8rem;
-        height: 1.8rem;
+        width: 1.75rem;
+        height: 1.75rem;
     }
     .contentInner {
         padding: 0 var(--sp-md) var(--sp-lg) var(--sp-md);
     }
-    .list {
-        gap: var(--sp-sm);
-    }
-    .changesList {
-        grid-template-columns: 1fr;
+    .changesList,
+    .formats {
+        grid-template-columns: minmax(0, 1fr);
     }
     .groupFormat {
         gap: var(--sp-sm);
+        min-width: 0;
+    }
+    .comingSoon {
+        min-width: 0;
+        max-width: 100%;
     }
     .btnDark,
     .btnDisabled,
