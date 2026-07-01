@@ -242,3 +242,57 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Couples therapy — coming soon */
+
+.comingSoon {
+    display: flex;
+    gap: var(--sp-sm);
+    align-items: flex-start;
+    margin: var(--sp-lg) 0;
+    padding: var(--sp-md);
+    background: var(--sand);
+    border-radius: 2px;
+}
+
+.comingSoonDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--terra);
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.comingSoon p {
+    font-size: var(--text-xs);
+    line-height: 1.7;
+    color: var(--muted);
+    font-style: italic;
+}
+
+.btnDisabled {
+    display: inline-block;
+    padding: 0.875rem 2.25rem;
+    background: transparent;
+    border: 1px solid var(--sand);
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+    cursor: not-allowed;
+    opacity: 0.6;
+}

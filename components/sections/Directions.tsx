@@ -39,8 +39,7 @@ export default function Directions() {
         </div>
         <Reveal delay={0.2}>
           <p className={styles.note}>
-            Найчастіше це не одне з трьох — а все одразу, з різних сторін одного
-            й того самого.
+            Найчастіше це не одна тема, а кілька одночасно.
           </p>
         </Reveal>
       </div>

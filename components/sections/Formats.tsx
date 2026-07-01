@@ -61,6 +61,56 @@ export default function Formats() {
             </div>
           </Reveal>
 
+          {/* Couples therapy — coming soon */}
+          <Reveal delay={0.08}>
+            <div className={styles.card}>
+              <div className={styles.rail}>
+                <p className={styles.cardLabel}>Для пари</p>
+                <h3 className={styles.cardTitle}>Парна терапія</h3>
+                <p className={styles.meta}>В процесі підготовки</p>
+                {/* <p className={styles.meta}>Онлайн або Київ · 90 хвилин</p> */}
+              </div>
+              <div className={styles.content}>
+                <p className={styles.cardBody}>
+                  Стосунки між двома людьми — це не лише про любов чи конфлікти.
+                  Це місце, де зустрічаються два різні досвіди, дві історії, два
+                  способи бути поруч, справлятися з напругою, просити про
+                  підтримку чи переживати близькість.
+                </p>
+                <p className={styles.cardBody}>
+                  З часом навіть люди, які дуже цінують одне одного, можуть
+                  почати дедалі частіше не чути, а захищатися. Не говорити про
+                  важливе, а накопичувати образи. Не помічати одне одного за
+                  звичними ролями, обов'язками й щоденними справами.
+                </p>
+                <p className={styles.cardBody}>
+                  Парна терапія — це простір, у якому можна сповільнитися і
+                  разом подивитися на те, що відбувається між вами. Не для того,
+                  щоб знайти винного. А щоб краще зрозуміти одне одного,
+                  побачити звичні сценарії ваших стосунків і поступово знаходити
+                  нові способи бути поруч.
+                </p>
+
+                <div className={styles.comingSoon}>
+                  <span className={styles.comingSoonDot} />
+                  <p>
+                    Наразі цей формат перебуває в процесі мого професійного
+                    розвитку. Я проходжу спеціалізацію "Гештальт підхід в роботі
+                    з парами", щоб надалі запропонувати цей напрямок своєї
+                    практики.
+                  </p>
+                </div>
+
+                <div className={styles.actions}>
+                  <button className={styles.btnDisabled} disabled>
+                    Скоро відкриється
+                  </button>
+                  {/* <a href="#contact" className="btn-primary">Записатися</a> */}
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
           {/* Companies */}
           <Reveal delay={0.06}>
             <div className={`${styles.card} ${styles["card--dark"]}`}>
@@ -130,7 +180,7 @@ export default function Formats() {
           <Reveal delay={0.04}>
             <div className={styles.card}>
               <div className={styles.rail}>
-                <p className={styles.cardLabel}>Групово</p>
+                <p className={styles.cardLabel}>Групи</p>
                 <h3 className={styles.cardTitle}>Групові формати</h3>
                 <p className={styles.meta}>Список очікування</p>
               </div>
