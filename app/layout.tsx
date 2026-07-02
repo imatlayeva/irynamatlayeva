@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-const siteUrl = "https://irynamatlayeva.com"; 
+const siteUrl = "https://irynamatlayeva.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -66,6 +66,15 @@ export const metadata: Metadata = {
     "сімейна терапія",
     "сімейний психолог",
     "консультація для пар",
+    "терапія стосунків",
+    "психолог для пар",
+    "конфлікти у стосунках",
+    "сімейний психолог Київ",
+    "парний психолог онлайн",
+    "криза стосунків",
+    "подружня терапія",
+    "relationship therapy",
+    "couples therapy",
   ],
   icons: {
     icon: "/favicon.svg",
