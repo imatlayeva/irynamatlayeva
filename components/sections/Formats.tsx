@@ -124,7 +124,7 @@ export default function Formats() {
             id="individual"
             label="Індивідуально"
             title="Індивідуальна терапія"
-            meta="Онлайн або Київ · 50 хвилин"
+            meta="Онлайн • Офлайн (Київ) · 50 хвилин"
             openId={openId}
             setOpenId={setOpenId}
           >
@@ -171,7 +171,7 @@ export default function Formats() {
             id="couples"
             label="Для пари"
             title="Парна терапія"
-            meta="В процесі підготовки"
+            meta="Онлайн • Офлайн (Київ)"
             delay={0.08}
             openId={openId}
             setOpenId={setOpenId}
@@ -198,15 +198,18 @@ export default function Formats() {
             <div className={styles.comingSoon}>
               <span className={styles.comingSoonDot} />
               <p>
-                Наразі цей формат перебуває в процесі мого професійного
-                розвитку. Я проходжу спеціалізацію "Гештальт підхід в роботі з
-                парами", щоб надалі запропонувати цей напрямок своєї практики.
+                Проходжу спеціалізацію «Гештальт-підхід у роботі з парами».
+                Робота з парами здійснюється у форматі ко-терапії під регулярною
+                супервізією.
               </p>
             </div>
             <div className={styles.actions}>
-              <button className={styles.btnDisabled} disabled>
+              <a href="#contact" className="btn-primary">
+                Записатися
+              </a>
+              {/* <button className={styles.btnDisabled} disabled>
                 Скоро відкриється
-              </button>
+              </button> */}
             </div>
           </FormatCard>
 
