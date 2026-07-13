@@ -126,6 +126,9 @@
     .scrollHint {
         display: none;
     }
+    .pause {
+        padding-bottom: 2rem;
+    }
 }
 
 .scrollHint {
