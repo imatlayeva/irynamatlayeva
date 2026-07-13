@@ -1,6 +1,7 @@
 .wrap {
     position: relative;
     isolation: isolate;
+    overflow-x: clip;
 }
 
 .glow {
