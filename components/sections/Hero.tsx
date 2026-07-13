@@ -66,10 +66,9 @@ export default function Hero() {
             >
               Записатися на консультацію
             </MagneticButton>
-            {/* <p className={styles.pause}>
-              Не завжди можна змінити темп життя. Але можна змінити те, як ти
-              живеш усередині нього.
-            </p> */}
+            <p className={styles.pause}>
+              Індивідуальна терапія • Парна терапія • Терапевтичні групи
+            </p>
           </motion.div>
         </div>
 
