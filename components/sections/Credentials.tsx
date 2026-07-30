@@ -12,7 +12,7 @@ const docs = [
     title: "Психологічна освіта",
   },
   {
-    src: "/documents/prostir_stosunkiv.jpg",
+    src: "/documents/space_of_relationships.jpeg",
     caption: "Інтенсив «Простір Стосунків» · НАГТУ",
     title: "Інтенсив «Простір Стосунків»",
   },
