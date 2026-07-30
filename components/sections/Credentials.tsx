@@ -12,24 +12,29 @@ const docs = [
     title: "Психологічна освіта",
   },
   {
-    src: "/documents/propedeutics.jpg",
-    caption: "Пропедевтика психіатрії · НАГТУ, 2026",
-    title: "Пропедевтика психіатрії",
+    src: "/documents/prostir_stosunkiv.jpg",
+    caption: "Інтенсив «Простір Стосунків» · НАГТУ",
+    title: "Інтенсив «Простір Стосунків»",
   },
   {
     src: "/documents/group-processes.jpg",
-    caption: "Групові процеси у психотерапії · НАГТУ, 2026",
+    caption: "Групові процеси у психотерапії · НАГТУ",
     title: "Групові процеси у психотерапії",
+  },
+  {
+    src: "/documents/propedeutics.jpg",
+    caption: "Пропедевтика психіатрії · НАГТУ",
+    title: "Пропедевтика психіатрії",
+  },
+   {
+    src: "/documents/identity-boundaries.jpg",
+    caption: "«Грані ідентичності» · НАГТУ",
+    title: "Грані ідентичності",
   },
   {
     src: "/documents/conference.jpg",
     caption: "XX Всеукраїнська гештальт конференція",
     title: "XX Всеукраїнська гештальт конференція",
-  },
-  {
-    src: "/documents/identity-boundaries.jpg",
-    caption: "«Грані ідентичності» · НАГТУ, 2025",
-    title: "Грані ідентичності",
   },
 ];
 
