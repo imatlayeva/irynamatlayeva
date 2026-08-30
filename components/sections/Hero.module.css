@@ -17,9 +17,9 @@
     gap: var(--sp-2xl);
     align-items: center;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
-
-.content {}
 
 .eyebrow {
     display: flex;
@@ -106,31 +106,6 @@
     background: var(--sand);
 }
 
-@media (max-width: 768px) {
-    .inner {
-        grid-template-columns: 1fr;
-        gap: var(--sp-xl);
-    }
-    .photoWrap {
-        order: -1;
-        aspect-ratio: 4/3;
-    }
-    .heading {
-        max-width: none;
-        font-size: clamp(1.5rem, 6.5vw, 2rem);
-    }
-    .tagline {
-        max-width: none;
-        font-size: clamp(1.25rem, 5.5vw, 1.5rem);
-    }
-    .scrollHint {
-        display: none;
-    }
-    .pause {
-        padding-bottom: 2rem;
-    }
-}
-
 .scrollHint {
     position: absolute;
     bottom: var(--sp-lg);
@@ -148,6 +123,41 @@
     animation: scrollPulse 2.2s ease-in-out infinite;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+        padding: var(--sp-lg) 0 var(--sp-md);
+    }
+    .inner {
+        grid-template-columns: 1fr;
+        gap: var(--sp-xl);
+    }
+    .photoWrap {
+        order: -1;
+        aspect-ratio: 4/3;
+    }
+    .heading {
+        max-width: none;
+        font-size: clamp(1.5rem, 6.5vw, 2rem);
+    }
+    .tagline {
+        max-width: none;
+        font-size: clamp(1.25rem, 5.5vw, 1.5rem);
+    }
+    .scrollHint {
+        /* display: none; */
+        position: static;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        margin-top: var(--sp-xs);
+    }
+    .pause {
+        padding-bottom: 0;
+    }
+}
+
 @keyframes scrollPulse {
     0%,
     100% {
@@ -157,5 +167,129 @@
     50% {
         opacity: 1;
         transform: scaleY(1);
+    }
+}
+
+
+/* дихаюча форма — за текстом */
+
+.breath {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    width: min(85vw, 520px);
+    height: min(85vw, 520px);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient( circle at 45% 40%, rgba(130, 139, 110, 0.24), rgba(184, 105, 74, 0.1) 55%, transparent 76%);
+    filter: blur(1px);
+    animation: breathe 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (min-width: 769px) {
+    .breath {
+        top: 50%;
+        left: 34%;
+        width: min(38vw, 560px);
+        height: min(38vw, 560px);
+    }
+}
+
+@keyframes breathe {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.45;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.04);
+        opacity: 1;
+    }
+}
+
+
+/* слово вдих/видих — незалежний елемент, не пов'язаний зі scrollHint */
+
+.breathWordWrap {
+    position: absolute;
+    bottom: calc(var(--sp-lg) + 2.5rem + var(--sp-md));
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-md);
+    z-index: 1;
+}
+
+.breathWord {
+    position: relative;
+    height: 2.25rem;
+    min-width: 8rem;
+    pointer-events: none;
+}
+
+.breathWord span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.25rem, 2.6vw, 1.875rem);
+    letter-spacing: 0.02em;
+    color: var(--olive);
+    opacity: 0;
+}
+
+.breathWord .inhale {
+    animation: breathWordFade 8s ease-in-out infinite;
+}
+
+.breathWord .exhale {
+    animation: breathWordFade 8s ease-in-out infinite;
+    animation-delay: 4s;
+}
+
+@keyframes breathWordFade {
+    0%,
+    8% {
+        opacity: 0;
+        transform: translate(-50%, -46%);
+    }
+    20%,
+    35% {
+        opacity: 0.24;
+        transform: translate(-50%, -50%);
+    }
+    48%,
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -54%);
+    }
+}
+
+@media (max-width: 768px) {
+    .breathWordWrap {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-top: var(--sp-sm);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scrollLine,
+    .breathWord .inhale,
+    .breathWord .exhale {
+        animation: none !important;
+    }
+    .breathWord span {
+        opacity: 0.2 !important;
     }
 }

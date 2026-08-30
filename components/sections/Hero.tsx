@@ -9,6 +9,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      <div className={styles.breath} aria-hidden="true" />
       <div className={styles.inner}>
         <div className={styles.content}>
           <motion.div
@@ -92,6 +93,18 @@ export default function Hero() {
           />
         </motion.div>
       </div>
+
+      <motion.div
+        className={styles.breathWordWrap}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+      >
+        <span className={styles.breathWord} aria-hidden="true">
+          <span className={styles.inhale}>вдих</span>
+          <span className={styles.exhale}>видих</span>
+        </span>
+      </motion.div>
 
       <motion.div
         className={styles.scrollHint}
