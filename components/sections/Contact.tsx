@@ -3,6 +3,10 @@ import styles from "./Contact.module.css";
 export default function Contact() {
   return (
     <section className={styles.section} id="contact">
+      <div className={styles.breathGroup} aria-hidden="true">
+        <div className={styles.breathA} />
+        <div className={styles.breathB} />
+      </div>
       <div className={styles.inner}>
         <div>
           <p className={styles.label}>Як починається робота</p>
