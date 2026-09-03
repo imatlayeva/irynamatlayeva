@@ -1,16 +1,21 @@
 .section {
     padding: var(--sp-3xl) 0;
     background: var(--cream);
+    position: relative;
+    overflow: hidden;
 }
 
 .inner {
     max-width: var(--max-w);
     margin: 0 auto;
     padding: 0 var(--sp-lg);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--sp-2xl);
-    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    max-width: 36rem;
+    margin-bottom: var(--sp-2xl);
 }
 
 .label {
@@ -18,11 +23,25 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--olive);
-    position: sticky;
-    top: var(--sp-xl);
+    margin-bottom: var(--sp-md);
 }
 
-.list {
+.heading {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: var(--text-3xl);
+    color: var(--forest);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 var(--sp-2xl);
+}
+
+.column {
     display: flex;
     flex-direction: column;
 }
@@ -60,23 +79,91 @@
     transition: transform 0.2s;
 }
 
-.icon.open {
-    transform: rotate(45deg);
-}
-
 .answer {
     font-size: var(--text-sm);
     line-height: 1.8;
     color: var(--muted);
     padding-bottom: var(--sp-md);
-    max-width: 32rem;
+    max-width: 30rem;
 }
 
-@media (max-width: 768px) {
-    .inner {
+@media (max-width: 900px) {
+    .columns {
         grid-template-columns: 1fr;
     }
-    .label {
-        position: static;
+    .breathGroup {
+        display: none;
+    }
+}
+
+
+/* дихаюча форма — виходить з нижнього правого кута секції */
+
+.breathGroup {
+    position: absolute;
+    top: -14%;
+    right: -8%;
+    width: min(30vw, 340px);
+    height: min(30vw, 340px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.breathA {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient( circle at 45% 45%, rgba(130, 139, 110, 0.22), rgba(184, 105, 74, 0.12) 55%, transparent 78%);
+    filter: blur(2px);
+    animation: breatheFaqA 9s ease-in-out infinite;
+}
+
+.breathB {
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    bottom: -6%;
+    left: 8%;
+    border-radius: 50%;
+    background: radial-gradient( circle at 45% 45%, rgba(184, 105, 74, 0.24), rgba(130, 139, 110, 0.1) 58%, transparent 80%);
+    filter: blur(1.5px);
+    animation: breatheFaqB 7.5s ease-in-out infinite;
+    animation-delay: 1.6s;
+}
+
+@keyframes breatheFaqA {
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
+}
+
+@keyframes breatheFaqB {
+    0%,
+    100% {
+        transform: scale(0.88);
+        opacity: 0.35;
+    }
+    50% {
+        transform: scale(1.06);
+        opacity: 0.65;
+    }
+}
+
+@media (max-width: 900px) {
+    .breathGroup {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .breathA,
+    .breathB {
+        animation: none;
     }
 }
