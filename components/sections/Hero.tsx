@@ -18,7 +18,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
           >
-            <span>Ірина Матлаєва · психологиня</span>
+            <span>Ірина Матлаєва · психологиня, гештальт-підхід</span>
           </motion.div>
 
           <motion.h1
