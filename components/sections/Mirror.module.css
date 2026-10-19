@@ -14,6 +14,13 @@
 }
 
 
+/* Діти flex-колонки не мають права розтягувати контейнер */
+
+.inner>* {
+    min-width: 0;
+}
+
+
 /* ── HEADER ──────────────────────────────────────────────── */
 
 .header {
@@ -44,42 +51,80 @@
 
 /* 4 columns on desktop, 2 on tablet, horizontal scroll on mobile */
 
+
+/* minmax(0, 1fr) — колонки не розширюються від довгого тексту */
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--sp-md);
+    min-width: 0;
 }
 
 .card {
-    background: var(--cream);
-    border: 1px solid var(--sand);
-    border-radius: 4px;
+    background: color-mix(in srgb, var(--sand) 14%, var(--cream));
+    border: 1px solid color-mix(in srgb, var(--sand) 70%, transparent);
+    border-radius: 16px;
+    container-type: inline-size;
+    /* заголовок підлаштовується під ширину картки */
     padding: var(--sp-md);
     display: flex;
     flex-direction: column;
     gap: var(--sp-sm);
+    min-width: 0;
     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
 }
 
-.card:hover {
-    border-color: var(--olive);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px -16px rgba(58, 63, 46, 0.18);
+
+/* hover лише там, де є справжній hover (не на телефонах) */
+
+@media (hover: hover) {
+    .card:hover {
+        border-color: var(--olive);
+        /* transform: translateY(-3px); */
+        box-shadow: 0 12px 32px -16px rgba(58, 63, 46, 0.18);
+    }
+    .card:hover .cardNum {
+        color: var(--terra);
+    }
+}
+
+
+/* Номер і заголовок в одному ряду */
+
+.cardHead {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-sm);
+    min-width: 0;
+    /* два рядки заголовка — текст починається на одному рівні */
+    /* min-height: 2.75rem; */
 }
 
 .cardNum {
+    flex: 0 0 auto;
     font-family: var(--font-display);
     font-style: italic;
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
     color: var(--sand);
     font-weight: 300;
-    line-height: 1;
+    line-height: 1.25;
     transition: color 0.3s ease;
 }
 
-.card:hover .cardNum {
-    color: var(--terra);
+.cardTitle {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 2.5em;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 6.5cqi, 1.2rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--forest);
+    overflow-wrap: break-word;
+    text-wrap: balance;
 }
 
 .cardText {
@@ -87,14 +132,16 @@
     line-height: 1.65;
     color: var(--text);
     font-weight: 300;
+    margin: 0;
+    text-wrap: pretty;
 }
 
 
 /* ── THRESHOLD PASSAGE ───────────────────────────────────── */
 
 .threshold {
-    background: var(--forest);
-    border-radius: 4px;
+    background: linear-gradient(160deg, var(--forest), color-mix(in srgb, var(--forest) 82%, #000));
+    border-radius: 20px;
     padding: var(--sp-xl) var(--sp-2xl);
     display: flex;
     flex-direction: column;
@@ -102,9 +149,9 @@
 }
 
 .thresholdLabel {
-    font-size: var(--text-xs);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-size: var(--text-sm);
     color: var(--olive);
 }
 
@@ -161,7 +208,7 @@
 
 @media (max-width: 1024px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .thresholdItems span {
         font-size: var(--text-lg);
@@ -195,23 +242,40 @@
     .grid {
         display: flex;
         overflow-x: auto;
+        /* головне проти "гуляння" вгору-вниз: вертикальної прокрутки в стрічці немає */
+        overflow-y: hidden;
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
+        scroll-padding-inline: var(--sp-lg);
         gap: var(--sp-sm);
+        padding-top: 4px;
         padding-bottom: var(--sp-sm);
-        /* margin: 0 calc(var(--sp-lg) * -1); */
         padding-left: var(--sp-lg);
         padding-right: var(--sp-lg);
         margin-left: calc(var(--sp-lg) * -1);
         margin-right: calc(var(--sp-lg) * -1);
         scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
     }
     .grid::-webkit-scrollbar {
         display: none;
     }
     .card {
         flex: 0 0 75vw;
+        max-width: 20rem;
         scroll-snap-align: start;
         min-height: 10rem;
+    }
+    .cardHead {
+        min-height: 0;
+    }
+    .cardTitle {
+        min-height: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none;
     }
 }
