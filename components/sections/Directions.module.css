@@ -1,7 +1,7 @@
 .section {
     padding: clamp(3.5rem, 7vw, 5.5rem) 0;
     color: var(--cream);
-    background: radial-gradient(60rem 28rem at 90% -10%, color-mix(in srgb, var(--terra) 14%, transparent), transparent 70%), var(--forest);
+    background: radial-gradient( 60rem 28rem at 90% -10%, color-mix(in srgb, var(--terra) 14%, transparent), transparent 70%), var(--forest);
     overflow-x: hidden;
 }
 
