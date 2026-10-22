@@ -1,5 +1,5 @@
 .section {
-    padding: var(--sp-3xl) 0;
+    padding: var(--section-y) 0;
     background: var(--cream);
 }
 
@@ -9,7 +9,7 @@
     padding: 0 var(--sp-lg);
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
-    gap: var(--sp-2xl) var(--sp-2xl);
+    gap: var(--section-gap) var(--col-gap);
     align-items: start;
 }
 

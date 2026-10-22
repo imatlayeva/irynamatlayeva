@@ -27,6 +27,11 @@
     --sp-3xl: 9rem;
     --max-w: 68rem;
     --prose-w: 44rem;
+    /* ритм сторінки: один набір відступів для всіх секцій */
+    --section-y: clamp(3.5rem, 7vw, 5.5rem);
+    --section-gap: clamp(1.75rem, 3.5vw, 3rem);
+    --col-gap: clamp(2rem, 5vw, 4rem);
+    --thread-h: clamp(2rem, 4vw, 3rem);
 }
 
 *,
@@ -82,7 +87,7 @@ button {
 }
 
 .section {
-    padding: var(--sp-3xl) 0;
+    padding: var(--section-y) 0;
 }
 
 .section--sm {
@@ -155,7 +160,7 @@ button {
 
 .thread {
     width: 1px;
-    height: 4rem;
+    height: var(--thread-h);
     background: linear-gradient(to bottom, transparent, var(--olive) 50%, transparent);
     margin: 0 auto;
     opacity: 0.35;

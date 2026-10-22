@@ -1,5 +1,5 @@
 .section {
-    padding: var(--sp-3xl) 0;
+    padding: var(--section-y) 0;
     background: var(--sand);
     position: relative;
     overflow: hidden;
@@ -11,7 +11,7 @@
     padding: 0 var(--sp-lg);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--sp-2xl);
+    gap: var(--section-gap) var(--col-gap);
     align-items: start;
     position: relative;
     z-index: 1;
@@ -83,7 +83,11 @@
 }
 
 .cta {
-    margin-top: var(--sp-2xl);
+    margin-top: clamp(1rem, 4vw, 3rem);
+}
+
+.cta>a:first-of-type {
+    margin-top: var(--sp-sm);
 }
 
 .ctaText {
@@ -92,7 +96,7 @@
     font-size: var(--text-lg);
     color: var(--muted);
     line-height: 1.5;
-    margin-bottom: var(--sp-xl);
+    margin-bottom: var(--sp-md);
     font-weight: 300;
     max-width: 26rem;
 }
@@ -106,6 +110,9 @@
 @media (max-width: 768px) {
     .inner {
         grid-template-columns: 1fr;
+    }
+    .cta {
+        margin-top: 0;
     }
 }
 

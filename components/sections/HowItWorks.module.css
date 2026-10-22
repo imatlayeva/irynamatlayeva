@@ -1,5 +1,5 @@
 .section {
-    padding: var(--sp-3xl) 0;
+    padding: var(--section-y) 0;
     background: var(--cream);
 }
 
@@ -9,7 +9,7 @@
     padding: 0 var(--sp-lg);
     display: grid;
     grid-template-columns: 1fr 1.4fr;
-    gap: var(--sp-2xl) var(--sp-3xl);
+    gap: var(--section-gap) var(--col-gap);
     align-items: start;
 }
 
@@ -21,7 +21,7 @@
     top: calc(4rem + var(--sp-xl));
     display: flex;
     flex-direction: column;
-    gap: var(--sp-xl);
+    gap: var(--sp-lg);
 }
 
 .sectionLabel {

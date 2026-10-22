@@ -1,5 +1,5 @@
 .section {
-    padding: var(--sp-3xl) 0;
+    padding: var(--section-y) 0;
     background: var(--cream);
     overflow-x: hidden;
 }
@@ -10,7 +10,7 @@
     padding: 0 var(--sp-lg);
     display: flex;
     flex-direction: column;
-    gap: var(--sp-2xl);
+    gap: var(--section-gap);
 }
 
 
@@ -142,7 +142,7 @@
 .threshold {
     background: linear-gradient(160deg, var(--forest), color-mix(in srgb, var(--forest) 82%, #000));
     border-radius: 20px;
-    padding: var(--sp-xl) var(--sp-2xl);
+    padding: var(--sp-lg) var(--sp-xl);
     display: flex;
     flex-direction: column;
     gap: var(--sp-md);

@@ -90,7 +90,7 @@ export default function FAQ() {
                               open === globalIndex
                                 ? "rotate(45deg)"
                                 : "rotate(0deg)",
-                            transition: "transform 0.3s ease",
+                            transition: "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)",
                           }}
                           viewBox="0 0 24 24"
                           fill="none"

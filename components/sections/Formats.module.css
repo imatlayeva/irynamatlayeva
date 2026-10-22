@@ -1,5 +1,5 @@
 .section {
-    padding: var(--sp-3xl) 0;
+    padding: var(--section-y) 0;
     background: var(--sand);
     overflow-x: clip;
     overflow-x: hidden;
@@ -16,7 +16,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--olive);
-    margin-bottom: var(--sp-2xl);
+    margin-bottom: var(--section-gap);
 }
 
 .list {

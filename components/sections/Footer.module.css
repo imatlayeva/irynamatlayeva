@@ -67,7 +67,7 @@
 
 .disclaimer {
     font-size: 0.7rem;
-    color: rgba(231, 225, 215, 0.28);
+    color: rgba(231, 225, 215, 0.6);
     line-height: 1.5;
 }
 
@@ -84,7 +84,7 @@
 .copyright,
 .ga {
     font-size: 0.68rem;
-    color: rgba(231, 225, 215, 0.25);
+    color: rgba(231, 225, 215, 0.45);
 }
 
 @media (max-width: 600px) {
