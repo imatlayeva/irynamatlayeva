@@ -126,6 +126,52 @@
     margin-top: var(--sp-sm);
 }
 
+.skillsBlock p {
+    font-size: var(--text-base);
+    line-height: 1.85;
+    color: var(--text);
+    max-width: 34rem;
+}
+
+.skills {
+    list-style: none;
+    counter-reset: skill;
+    margin: var(--sp-md) 0;
+    padding: 0;
+    max-width: 34rem;
+}
+
+.skills li {
+    counter-increment: skill;
+    position: relative;
+    padding: var(--sp-sm) 0 var(--sp-sm) 2.5rem;
+    border-top: 1px solid var(--sand);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.skills li:last-child {
+    border-bottom: 1px solid var(--sand);
+}
+
+.skills li::before {
+    content: counter(skill, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: calc(var(--sp-sm) + 0.3em);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    color: var(--olive);
+}
+
+.skills b {
+    display: block;
+    color: var(--forest);
+    font-weight: 500;
+    margin-bottom: 0.15rem;
+}
+
 .warning {
     margin: var(--sp-lg) 0;
     padding-left: var(--sp-md);
